@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelli's Dream Build</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d1117; /* Dark FabLogic background */
+            color: #c9d1d9; /* Light text */
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #58a6ff; /* Blue accent */
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #58a6ff; /* Matched to blue title */
+            padding-bottom: 15px;
+        }
+        .part-card {
+            display: flex;
+            background: #161b22; /* Darker card background */
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+            margin-bottom: 30px;
+            overflow: hidden;
+            border: 1px solid #30363d; /* Subtle dark border */
+            transition: transform 0.2s ease-in-out;
+        }
+        .part-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+            border-color: #8b949e;
+        }
+        .part-image {
+            width: 220px;
+            background-color: #0d1117; /* Match body bg */
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            overflow: hidden;
+        }
+        .part-image img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .part-info {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .part-title {
+            margin-top: 0;
+            font-size: 1.4em;
+            color: #58a6ff; /* Matched to blue title */
+        }
+        .part-specs {
+            margin: 18px 0;
+            padding-left: 20px;
+            color: #8b949e; /* Dimmer secondary text */
+            list-style-type: none; /* Remove standard bullets */
+            flex-grow: 1;
+        }
+        .part-specs li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .part-specs li::before {
+            content: '⚡'; /* Dev-style lightning bolt bullet */
+            position: absolute;
+            left: -25px;
+            color: #58a6ff;
+        }
+        .price-action-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 20px;
+            border-top: 1px solid #30363d;
+        }
+        .part-price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #c9d1d9;
+        }
+        .buy-button {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #58a6ff; /* Matched to blue title */
+            color: #0d1117; /* Dark text for contrast against the blue */
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .buy-button:hover {
+            background-color: #79b8ff; /* Lighter blue for hover */
+            transform: scale(1.02);
+        }
+        .total-container {
+            background: #161b22;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            border: 1px solid #30363d;
+            text-align: right;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        }
+        .total-container h2 {
+            margin: 0;
+            color: #8b949e;
+            font-size: 1.2em;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .total-container .total-price {
+            font-size: 3em;
+            color: #58a6ff;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .total-container .tax-note {
+            color: #8b949e;
+            font-size: 0.9em;
+            margin: 0;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .part-card {
+                flex-direction: column;
+            }
+            .part-image {
+                width: 100%;
+                height: 220px;
+            }
+            .part-image img {
+                width: 100%;
+                height: 100%;
+            }
+            .price-action-row {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .total-container {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Shelli's Dream Build</h1>
+
+    <!-- CPU -->
+    <div class="part-card">
+        <div class="part-image">
+            <img src="https://loremflickr.com/320/320/sloth?lock=1" alt="Cute Sloth" onerror="this.onerror=null;this.src='https://placehold.co/200x200/161b22/58a6ff?text=Cute+Sloth';">
+        </div>
+        <div class="part-info">
+            <h2 class="part-title">AMD Ryzen 5 7600 Processor</h2>
+            <ul class="part-specs">
+                <li><strong>Cores/Threads:</strong> 6 Cores / 12 Threads</li>
+                <li><strong>Speed:</strong> 3.80 GHz Base / 5.10 GHz Boost</li>
+                <li><strong>Cooling:</strong> Includes Wraith Stealth stock cooler</li>
+            </ul>
+            <div class="price-action-row">
+                <div class="part-price">$199.00</div>
+                <a href="https://www.amazon.com/s?k=AMD+Ryzen+5+7600+Processor" target="_blank" class="buy-button">Check Price</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- RAM -->
+    <div class="part-card">
+        <div class="part-image">
+            <img src="https://loremflickr.com/320/320/sloth?lock=2" alt="Cute Sloth" onerror="this.onerror=null;this.src='https://placehold.co/200x200/161b22/58a6ff?text=Cute+Sloth';">
+        </div>
+        <div class="part-info">
+            <h2 class="part-title">Silicon Power Zenith RGB 6000 MT/s DDR5 Kit</h2>
+            <ul class="part-specs">
+                <li><strong>Capacity:</strong> 64GB (2x32GB)</li>
+                <li><strong>Speed:</strong> 6000 MT/s DDR5</li>
+                <li><strong>Features:</strong> Built-in aluminum heat sinks for sustained workloads</li>
+            </ul>
+            <div class="price-action-row">
+                <div class="part-price">$170.00</div>
+                <a href="https://www.amazon.com/s?k=Silicon+Power+64GB+DDR5+6000+Desktop+Memory" target="_blank" class="buy-button">Check Price</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Storage -->
+    <div class="part-card">
+        <div class="part-image">
+            <img src="https://loremflickr.com/320/320/sloth?lock=3" alt="Cute Sloth" onerror="this.onerror=null;this.src='https://placehold.co/200x200/161b22/58a6ff?text=Cute+Sloth';">
+        </div>
+        <div class="part-info">
+            <h2 class="part-title">Silicon Power UD90 4TB NVMe PCIe 4.0 M.2 SSD</h2>
+            <ul class="part-specs">
+                <li><strong>Capacity:</strong> 4 Terabytes</li>
+                <li><strong>Interface:</strong> PCIe 4.0 x4 NVMe</li>
+                <li><strong>Speeds:</strong> Up to 5000 MB/s Read / 4800 MB/s Write</li>
+            </ul>
+            <div class="price-action-row">
+                <div class="part-price">$220.00</div>
+                <a href="https://www.amazon.com/s?k=Silicon+Power+UD90+4TB+NVMe" target="_blank" class="buy-button">Check Price</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- GPU -->
+    <div class="part-card">
+        <div class="part-image">
+            <img src="https://loremflickr.com/320/320/sloth?lock=4" alt="Cute Sloth" onerror="this.onerror=null;this.src='https://placehold.co/200x200/161b22/58a6ff?text=Cute+Sloth';">
+        </div>
+        <div class="part-info">
+            <h2 class="part-title">Gigabyte GeForce RTX 4060 8G</h2>
+            <ul class="part-specs">
+                <li><strong>Memory:</strong> 8GB GDDR6</li>
+                <li><strong>Ports:</strong> 2x DisplayPort 1.4a, 2x HDMI 2.1a (Natively supports dual monitors)</li>
+                <li><strong>Design:</strong> Compact Windforce cooling system</li>
+            </ul>
+            <div class="price-action-row">
+                <div class="part-price">$299.99</div>
+                <a href="https://www.amazon.com/s?k=Gigabyte+GeForce+RTX+4060+8G" target="_blank" class="buy-button">Check Price</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Motherboard -->
+    <div class="part-card">
+        <div class="part-image">
+            <img src="https://loremflickr.com/320/320/sloth?lock=5" alt="Cute Sloth" onerror="this.onerror=null;this.src='https://placehold.co/200x200/161b22/58a6ff?text=Cute+Sloth';">
+        </div>
+        <div class="part-info">
+            <h2 class="part-title">MSI B650 GAMING PLUS WIFI Motherboard</h2>
+            <ul class="part-specs">
+                <li><strong>Form Factor:</strong> ATX</li>
+                <li><strong>Socket:</strong> AMD AM5</li>
+                <li><strong>Features:</strong> Integrated Wi-Fi, plenty of USB ports for accessories</li>
+            </ul>
+            <div class="price-action-row">
+                <div class="part-price">$169.99</div>
+                <a href="https://www.amazon.com/s?k=MSI+B650+GAMING+PLUS+WIFI" target="_blank" class="buy-button">Check Price</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case -->
+    <div class="part-card">
+        <div class="part-image">
+            <img src="https://loremflickr.com/320/320/sloth?lock=6" alt="Cute Sloth" onerror="this.onerror=null;this.src='https://placehold.co/200x200/161b22/58a6ff?text=Cute+Sloth';">
+        </div>
+        <div class="part-info">
+            <h2 class="part-title">NZXT H5 Flow ATX Mid-Tower Case</h2>
+            <ul class="part-specs">
+                <li><strong>Form Factor:</strong> Mid-Tower</li>
+                <li><strong>Airflow:</strong> Perforated front mesh panel</li>
+                <li><strong>Features:</strong> Excellent built-in cable management</li>
+            </ul>
+            <div class="price-action-row">
+                <div class="part-price">$94.99</div>
+                <a href="https://www.amazon.com/s?k=NZXT+H5+Flow" target="_blank" class="buy-button">Check Price</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Power Supply -->
+    <div class="part-card">
+        <div class="part-image">
+            <img src="https://loremflickr.com/320/320/sloth?lock=7" alt="Cute Sloth" onerror="this.onerror=null;this.src='https://placehold.co/200x200/161b22/58a6ff?text=Cute+Sloth';">
+        </div>
+        <div class="part-info">
+            <h2 class="part-title">SeaSonic CORE GX 650W 80 Plus Gold PSU</h2>
+            <ul class="part-specs">
+                <li><strong>Wattage:</strong> 650W</li>
+                <li><strong>Efficiency:</strong> 80 Plus Gold</li>
+                <li><strong>Cables:</strong> Fully Modular (only plug in what you need)</li>
+            </ul>
+            <div class="price-action-row">
+                <div class="part-price">$79.99</div>
+                <a href="https://www.amazon.com/s?k=SeaSonic+CORE+GX+650W+80+Plus+Gold" target="_blank" class="buy-button">Check Price</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Operating System -->
+    <div class="part-card">
+        <div class="part-image">
+            <img src="https://loremflickr.com/320/320/sloth?lock=8" alt="Cute Sloth" onerror="this.onerror=null;this.src='https://placehold.co/200x200/161b22/58a6ff?text=Cute+Sloth';">
+        </div>
+        <div class="part-info">
+            <h2 class="part-title">Windows 11 Pro (Download)</h2>
+            <ul class="part-specs">
+                <li><strong>Format:</strong> Digital Download</li>
+                <li><strong>Security:</strong> Includes BitLocker device encryption and Zero Trust-ready OS features</li>
+                <li><strong>Ideal for:</strong> Professional business environments handling sensitive client data</li>
+            </ul>
+            <div class="price-action-row">
+                <div class="part-price">$199.99</div>
+                <a href="https://www.microsoft.com/en-us/d/windows-11-pro/dg7gmgf0d8h4" target="_blank" class="buy-button">Check Price</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Total Cost Section -->
+    <div class="total-container">
+        <h2>Total Estimated Materials</h2>
+        <div class="total-price">$1,433.95</div>
+        <p class="tax-note">*Prices are estimates based on standard retail values and do not include taxes or shipping.</p>
+    </div>
+
+</body>
+</html>
